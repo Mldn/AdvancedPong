@@ -1,0 +1,971 @@
+Analysis & Synthesis report for Player2
+Thu Feb 07 20:13:21 2019
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: MousePS2:inst|REGX:inst17
+ 13. Parameter Settings for User Entity Instance: MousePS2:inst|CMPX:inst66
+ 14. Parameter Settings for User Entity Instance: MousePS2:inst|REGX:packet_byte_reg
+ 15. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:inst33
+ 16. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:inst8
+ 17. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CMPX:inst85
+ 18. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:bit_cnt
+ 19. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CONSTX:inst87
+ 20. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CMPX:inst63
+ 21. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:Timer_reg
+ 22. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CMPX:inst59
+ 23. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CONSTX:inst60
+ 24. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CONSTX:inst69
+ 25. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:inst34
+ 26. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst
+ 27. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst4
+ 28. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst5
+ 29. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst6
+ 30. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst7
+ 31. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst8
+ 32. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst9
+ 33. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst10
+ 34. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst11
+ 35. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst12
+ 36. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst13
+ 37. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst14
+ 38. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst15
+ 39. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst16
+ 40. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst17
+ 41. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst18
+ 42. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst19
+ 43. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst20
+ 44. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst21
+ 45. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst22
+ 46. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst23
+ 47. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst24
+ 48. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CMPX:inst81
+ 49. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CONSTX:inst82123184
+ 50. Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:inst31
+ 51. Parameter Settings for User Entity Instance: MousePS2:inst|REGX:inst9
+ 52. Parameter Settings for User Entity Instance: MousePS2:inst|REGX:inst11
+ 53. Parameter Settings for User Entity Instance: MousePS2:inst|CMPX:inst18
+ 54. Parameter Settings for User Entity Instance: MousePS2:inst|REGX:mouse_data_reg
+ 55. Parameter Settings for User Entity Instance: MousePS2:inst|REGX:mouse_data_int_reg53
+ 56. Parameter Settings for User Entity Instance: MousePS2:inst|REGX:mouse_data_int_reg
+ 57. Parameter Settings for User Entity Instance: MousePS2:inst|REGX:mouse_data_int_reg52
+ 58. Parameter Settings for User Entity Instance: CMPX:inst2
+ 59. Parameter Settings for User Entity Instance: CMPX:inst5
+ 60. Elapsed Time Per Partition
+ 61. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Feb 07 20:13:21 2019      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; Player2                                    ;
+; Top-level Entity Name              ; Main                                       ;
+; Family                             ; Cyclone III                                ;
+; Total logic elements               ; 148                                        ;
+;     Total combinational functions  ; 83                                         ;
+;     Dedicated logic registers      ; 107                                        ;
+; Total registers                    ; 107                                        ;
+; Total pins                         ; 18                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
+; Top-level entity name                                                      ; Main               ; Player2            ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------+---------+
+; RISING_EDGE.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/mn170325/Desktop/Player2/RISING_EDGE.bdf  ;         ;
+; MousePS2.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/mn170325/Desktop/Player2/MousePS2.bdf     ;         ;
+; Debouncer.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/mn170325/Desktop/Player2/Debouncer.bdf    ;         ;
+; DC8.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/mn170325/Desktop/Player2/DC8.bdf          ;         ;
+; MP2X.vhd                         ; yes             ; User VHDL File                     ; C:/Users/mn170325/Desktop/Player2/MP2X.vhd         ;         ;
+; CONSTX.vhd                       ; yes             ; User VHDL File                     ; C:/Users/mn170325/Desktop/Player2/CONSTX.vhd       ;         ;
+; CMPX.vhd                         ; yes             ; User VHDL File                     ; C:/Users/mn170325/Desktop/Player2/CMPX.vhd         ;         ;
+; Transceiver3.bdf                 ; yes             ; User Block Diagram/Schematic File  ; C:/Users/mn170325/Desktop/Player2/Transceiver3.bdf ;         ;
+; REG1_INC_CL.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/mn170325/Desktop/Player2/REG1_INC_CL.bdf  ;         ;
+; REG11.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/mn170325/Desktop/Player2/REG11.bdf        ;         ;
+; REGX.vhd                         ; yes             ; User VHDL File                     ; C:/Users/mn170325/Desktop/Player2/REGX.vhd         ;         ;
+; Main.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/mn170325/Desktop/Player2/Main.bdf         ;         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 148       ;
+;                                             ;           ;
+; Total combinational functions               ; 83        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 38        ;
+;     -- 3 input functions                    ; 8         ;
+;     -- <=2 input functions                  ; 37        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 71        ;
+;     -- arithmetic mode                      ; 12        ;
+;                                             ;           ;
+; Total registers                             ; 107       ;
+;     -- Dedicated logic registers            ; 107       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 18        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 107       ;
+; Total fan-out                               ; 595       ;
+; Average fan-out                             ; 2.61      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                      ; Library Name ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------+
+; |Main                             ; 83 (0)            ; 107 (0)      ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |Main                                                                    ; work         ;
+;    |CMPX:inst2|                   ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|CMPX:inst2                                                         ; work         ;
+;    |CMPX:inst5|                   ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|CMPX:inst5                                                         ; work         ;
+;    |MousePS2:inst|                ; 76 (3)            ; 105 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst                                                      ; work         ;
+;       |CMPX:inst66|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|CMPX:inst66                                          ; work         ;
+;       |REGX:inst11|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|REGX:inst11                                          ; work         ;
+;       |REGX:inst17|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|REGX:inst17                                          ; work         ;
+;       |REGX:inst9|                ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|REGX:inst9                                           ; work         ;
+;       |REGX:mouse_data_int_reg52| ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|REGX:mouse_data_int_reg52                            ; work         ;
+;       |REGX:mouse_data_int_reg53| ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|REGX:mouse_data_int_reg53                            ; work         ;
+;       |REGX:mouse_data_int_reg|   ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|REGX:mouse_data_int_reg                              ; work         ;
+;       |REGX:mouse_data_reg|       ; 0 (0)             ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|REGX:mouse_data_reg                                  ; work         ;
+;       |REGX:packet_byte_reg|      ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|REGX:packet_byte_reg                                 ; work         ;
+;       |RISING_EDGE:inst1|         ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|RISING_EDGE:inst1                                    ; work         ;
+;       |Transceiver3:inst4|        ; 68 (14)           ; 54 (5)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4                                   ; work         ;
+;          |CMPX:inst63|            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|CMPX:inst63                       ; work         ;
+;          |DC8:inst9|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|DC8:inst9                         ; work         ;
+;          |Debouncer:inst3|        ; 5 (2)             ; 5 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|Debouncer:inst3                   ; work         ;
+;             |REG1_INC_CL:inst2|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|Debouncer:inst3|REG1_INC_CL:inst2 ; work         ;
+;             |REG1_INC_CL:inst3|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|Debouncer:inst3|REG1_INC_CL:inst3 ; work         ;
+;             |REG1_INC_CL:inst4|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|Debouncer:inst3|REG1_INC_CL:inst4 ; work         ;
+;          |Debouncer:inst7|        ; 5 (2)             ; 5 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|Debouncer:inst7                   ; work         ;
+;             |REG1_INC_CL:inst2|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|Debouncer:inst7|REG1_INC_CL:inst2 ; work         ;
+;             |REG1_INC_CL:inst3|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|Debouncer:inst7|REG1_INC_CL:inst3 ; work         ;
+;             |REG1_INC_CL:inst4|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|Debouncer:inst7|REG1_INC_CL:inst4 ; work         ;
+;          |REG11:ps2_word_reg|     ; 12 (1)            ; 11 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg                ; work         ;
+;             |MP2X:inst10|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst10    ; work         ;
+;             |MP2X:inst12|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst12    ; work         ;
+;             |MP2X:inst14|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst14    ; work         ;
+;             |MP2X:inst16|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst16    ; work         ;
+;             |MP2X:inst18|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst18    ; work         ;
+;             |MP2X:inst20|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst20    ; work         ;
+;             |MP2X:inst22|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst22    ; work         ;
+;             |MP2X:inst24|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst24    ; work         ;
+;             |MP2X:inst4|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst4     ; work         ;
+;             |MP2X:inst6|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst6     ; work         ;
+;             |MP2X:inst8|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst8     ; work         ;
+;             |REGX:inst11|         ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst11    ; work         ;
+;             |REGX:inst13|         ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst13    ; work         ;
+;             |REGX:inst15|         ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst15    ; work         ;
+;             |REGX:inst17|         ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst17    ; work         ;
+;             |REGX:inst19|         ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst19    ; work         ;
+;             |REGX:inst21|         ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst21    ; work         ;
+;             |REGX:inst23|         ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst23    ; work         ;
+;             |REGX:inst5|          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst5     ; work         ;
+;             |REGX:inst7|          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst7     ; work         ;
+;             |REGX:inst9|          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst9     ; work         ;
+;             |REGX:inst|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst      ; work         ;
+;          |REGX:Timer_reg|         ; 18 (18)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REGX:Timer_reg                    ; work         ;
+;          |REGX:bit_cnt|           ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REGX:bit_cnt                      ; work         ;
+;          |REGX:inst31|            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REGX:inst31                       ; work         ;
+;          |REGX:inst34|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REGX:inst34                       ; work         ;
+;          |REGX:inst8|             ; 3 (3)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|MousePS2:inst|Transceiver3:inst4|REGX:inst8                        ; work         ;
+;    |RISING_EDGE:inst6|            ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|RISING_EDGE:inst6                                                  ; work         ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                     ;
++---------------------------------------------------+--------------------+
+; Register name                                     ; Reason for Removal ;
++---------------------------------------------------+--------------------+
+; MousePS2:inst|REGX:mouse_data_int_reg53|data[6,7] ; Lost fanout        ;
+; MousePS2:inst|REGX:mouse_data_reg|data[22,23]     ; Lost fanout        ;
+; Total Number of Removed Registers = 4             ;                    ;
++---------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 107   ;
+; Number of registers using Synchronous Clear  ; 13    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 82    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; MousePS2:inst|REGX:inst9|data[0]       ; 9       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Main|MousePS2:inst|REGX:packet_byte_reg|data[0]              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Main|MousePS2:inst|Transceiver3:inst4|REGX:inst8|data[1]     ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |Main|MousePS2:inst|Transceiver3:inst4|REGX:Timer_reg|data[1] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|MousePS2:inst|Transceiver3:inst4|REGX:bit_cnt|data[1]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|REGX:inst17 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; size           ; 1     ; Signed Integer                                ;
+; default_value  ; 0     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|CMPX:inst66 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; size           ; 2     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|REGX:packet_byte_reg ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; size           ; 2     ; Signed Integer                                         ;
+; default_value  ; 0     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:inst33 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                   ;
+; default_value  ; 0     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:inst8 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; size           ; 2     ; Signed Integer                                                  ;
+; default_value  ; 0     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CMPX:inst85 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 4     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:bit_cnt ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; size           ; 4     ; Signed Integer                                                    ;
+; default_value  ; 0     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CONSTX:inst87 ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; size           ; 4     ; Signed Integer                                                     ;
+; const          ; 11    ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CMPX:inst63 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 13    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:Timer_reg ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; size           ; 13    ; Signed Integer                                                      ;
+; default_value  ; 0     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CMPX:inst59 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 13    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CONSTX:inst60 ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; size           ; 13    ; Signed Integer                                                     ;
+; const          ; 2800  ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CONSTX:inst69 ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; size           ; 13    ; Signed Integer                                                     ;
+; const          ; 5000  ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:inst34 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                   ;
+; default_value  ; 0     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                    ;
+; default_value  ; 0     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst4 ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst5 ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                     ;
+; default_value  ; 0     ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst6 ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst7 ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                     ;
+; default_value  ; 0     ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst8 ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst9 ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                     ;
+; default_value  ; 0     ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst10 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst11 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
+; default_value  ; 0     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst12 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst13 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
+; default_value  ; 0     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst14 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst15 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
+; default_value  ; 0     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst16 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst17 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
+; default_value  ; 0     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst18 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst19 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
+; default_value  ; 0     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst20 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst21 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
+; default_value  ; 0     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst22 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|REGX:inst23 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
+; default_value  ; 0     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst24 ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; size           ; 1     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CMPX:inst81 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 4     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|CONSTX:inst82123184 ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; size           ; 4     ; Signed Integer                                                           ;
+; const          ; 10    ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|Transceiver3:inst4|REGX:inst31 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 8     ; Signed Integer                                                   ;
+; default_value  ; 0     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|REGX:inst9 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; size           ; 1     ; Signed Integer                               ;
+; default_value  ; 1     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|REGX:inst11 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; size           ; 1     ; Signed Integer                                ;
+; default_value  ; 0     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|CMPX:inst18 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; size           ; 8     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|REGX:mouse_data_reg ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; size           ; 24    ; Signed Integer                                        ;
+; default_value  ; 0     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|REGX:mouse_data_int_reg53 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; size           ; 8     ; Signed Integer                                              ;
+; default_value  ; 0     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|REGX:mouse_data_int_reg ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; size           ; 8     ; Signed Integer                                            ;
+; default_value  ; 0     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MousePS2:inst|REGX:mouse_data_int_reg52 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; size           ; 8     ; Signed Integer                                              ;
+; default_value  ; 0     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CMPX:inst2 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; size           ; 8     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CMPX:inst5 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; size           ; 8     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Thu Feb 07 20:13:18 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Player2 -c Player2
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file rising_edge.bdf
+    Info (12023): Found entity 1: RISING_EDGE
+Info (12021): Found 1 design units, including 1 entities, in source file mouseps2.bdf
+    Info (12023): Found entity 1: MousePS2
+Info (12021): Found 1 design units, including 1 entities, in source file debouncer.bdf
+    Info (12023): Found entity 1: Debouncer
+Info (12021): Found 1 design units, including 1 entities, in source file dc8.bdf
+    Info (12023): Found entity 1: DC8
+Info (12021): Found 2 design units, including 1 entities, in source file mp2x.vhd
+    Info (12022): Found design unit 1: MP2X-rtl
+    Info (12023): Found entity 1: MP2X
+Info (12021): Found 2 design units, including 1 entities, in source file constx.vhd
+    Info (12022): Found design unit 1: CONSTX-rtl
+    Info (12023): Found entity 1: CONSTX
+Info (12021): Found 2 design units, including 1 entities, in source file cmpx.vhd
+    Info (12022): Found design unit 1: CMPX-rtl
+    Info (12023): Found entity 1: CMPX
+Info (12021): Found 1 design units, including 1 entities, in source file transceiver3.bdf
+    Info (12023): Found entity 1: Transceiver3
+Info (12021): Found 1 design units, including 1 entities, in source file reg1_inc_cl.bdf
+    Info (12023): Found entity 1: REG1_INC_CL
+Info (12021): Found 1 design units, including 1 entities, in source file reg11.bdf
+    Info (12023): Found entity 1: REG11
+Info (12021): Found 2 design units, including 1 entities, in source file regx.vhd
+    Info (12022): Found design unit 1: REGX-rtl
+    Info (12023): Found entity 1: REGX
+Info (12021): Found 2 design units, including 1 entities, in source file clk_divider.vhd
+    Info (12022): Found design unit 1: CLK_DIVIDER-rtl
+    Info (12023): Found entity 1: CLK_DIVIDER
+Info (12021): Found 1 design units, including 1 entities, in source file main.bdf
+    Info (12023): Found entity 1: Main
+Info (12127): Elaborating entity "Main" for the top level hierarchy
+Warning (275008): Primitive "VCC" of instance "inst10" not used
+Info (12128): Elaborating entity "RISING_EDGE" for hierarchy "RISING_EDGE:inst6"
+Info (12128): Elaborating entity "MousePS2" for hierarchy "MousePS2:inst"
+Warning (275008): Primitive "NOT" of instance "inst30" not used
+Info (12128): Elaborating entity "REGX" for hierarchy "MousePS2:inst|REGX:inst17"
+Info (12128): Elaborating entity "CMPX" for hierarchy "MousePS2:inst|CMPX:inst66"
+Info (12128): Elaborating entity "REGX" for hierarchy "MousePS2:inst|REGX:packet_byte_reg"
+Info (12128): Elaborating entity "Transceiver3" for hierarchy "MousePS2:inst|Transceiver3:inst4"
+Warning (275008): Primitive "NOT" of instance "inst71" not used
+Info (12128): Elaborating entity "DC8" for hierarchy "MousePS2:inst|Transceiver3:inst4|DC8:inst9"
+Info (12128): Elaborating entity "Debouncer" for hierarchy "MousePS2:inst|Transceiver3:inst4|Debouncer:inst3"
+Info (12128): Elaborating entity "REG1_INC_CL" for hierarchy "MousePS2:inst|Transceiver3:inst4|Debouncer:inst3|REG1_INC_CL:inst2"
+Info (12128): Elaborating entity "CMPX" for hierarchy "MousePS2:inst|Transceiver3:inst4|CMPX:inst85"
+Info (12128): Elaborating entity "REGX" for hierarchy "MousePS2:inst|Transceiver3:inst4|REGX:bit_cnt"
+Info (12128): Elaborating entity "CONSTX" for hierarchy "MousePS2:inst|Transceiver3:inst4|CONSTX:inst87"
+Info (12128): Elaborating entity "CMPX" for hierarchy "MousePS2:inst|Transceiver3:inst4|CMPX:inst63"
+Info (12128): Elaborating entity "REGX" for hierarchy "MousePS2:inst|Transceiver3:inst4|REGX:Timer_reg"
+Info (12128): Elaborating entity "CONSTX" for hierarchy "MousePS2:inst|Transceiver3:inst4|CONSTX:inst60"
+Info (12128): Elaborating entity "CONSTX" for hierarchy "MousePS2:inst|Transceiver3:inst4|CONSTX:inst69"
+Info (12128): Elaborating entity "REG11" for hierarchy "MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg"
+Info (12128): Elaborating entity "MP2X" for hierarchy "MousePS2:inst|Transceiver3:inst4|REG11:ps2_word_reg|MP2X:inst4"
+Info (12128): Elaborating entity "CONSTX" for hierarchy "MousePS2:inst|Transceiver3:inst4|CONSTX:inst82123184"
+Info (12128): Elaborating entity "REGX" for hierarchy "MousePS2:inst|Transceiver3:inst4|REGX:inst31"
+Info (12128): Elaborating entity "REGX" for hierarchy "MousePS2:inst|REGX:inst9"
+Info (12128): Elaborating entity "CMPX" for hierarchy "MousePS2:inst|CMPX:inst18"
+Info (12128): Elaborating entity "REGX" for hierarchy "MousePS2:inst|REGX:mouse_data_reg"
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 167 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 149 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4672 megabytes
+    Info: Processing ended: Thu Feb 07 20:13:21 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
